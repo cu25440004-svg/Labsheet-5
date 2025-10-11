@@ -280,3 +280,317 @@ for num in range(2, N + 1):
 # 13
 # 17
 # 19
+# ============================================================
+# 14. Check whether a given number is Armstrong or not
+# ============================================================
+num = int(input("Enter a number: "))
+sum_val = 0
+temp = num
+while temp > 0:
+    digit = temp % 10
+    sum_val += digit ** 3
+    temp //= 10
+if num == sum_val:
+    print("Armstrong number")
+else:
+    print("Not an Armstrong number")
+
+# Example:
+# Enter a number: 153
+# Armstrong number
+
+print("\n--------------------------------------------\n")
+
+# ============================================================
+# 15. Display Armstrong numbers between 1 and 500
+# ============================================================
+for num in range(1, 501):
+    sum_val = 0
+    temp = num
+    while temp > 0:
+        digit = temp % 10
+        sum_val += digit ** 3
+        temp //= 10
+    if num == sum_val:
+        print(num)
+
+# Output:
+# 1 153 370 371 407
+
+print("\n--------------------------------------------\n")
+
+# ============================================================
+# 16. Check whether a number is perfect number
+# ============================================================
+num = int(input("Enter a number: "))
+sum_div = 0
+for i in range(1, num):
+    if num % i == 0:
+        sum_div += i
+if sum_div == num:
+    print("Perfect number")
+else:
+    print("Not a perfect number")
+
+# Example:
+# Enter a number: 28
+# Perfect number
+
+print("\n--------------------------------------------\n")
+
+# ============================================================
+# 17. Display all perfect numbers between 1 and 1000
+# ============================================================
+for num in range(1, 1001):
+    sum_div = 0
+    for i in range(1, num):
+        if num % i == 0:
+            sum_div += i
+    if sum_div == num:
+        print(num)
+
+# Output:
+# 6 28 496
+
+print("\n--------------------------------------------\n")
+
+# ============================================================
+# 18. Check whether a number is strong number
+# ============================================================
+num = int(input("Enter a number: "))
+sum_fact = 0
+temp = num
+while temp > 0:
+    digit = temp % 10
+    fact = 1
+    for i in range(1, digit + 1):
+        fact *= i
+    sum_fact += fact
+    temp //= 10
+if num == sum_fact:
+    print("Strong number")
+else:
+    print("Not a strong number")
+
+# Example:
+# Enter a number: 145
+# Strong number
+
+print("\n--------------------------------------------\n")
+
+# ============================================================
+# 19. Display all strong numbers between 1 and 500
+# ============================================================
+for num in range(1, 501):
+    sum_fact = 0
+    temp = num
+    while temp > 0:
+        digit = temp % 10
+        fact = 1
+        for i in range(1, digit + 1):
+            fact *= i
+        sum_fact += fact
+        temp //= 10
+    if num == sum_fact:
+        print(num)
+
+# Output:
+# 1 2 145
+
+print("\n--------------------------------------------\n")
+
+# ============================================================
+# 20. Print reverse of a number and check if it’s palindrome
+# ============================================================
+num = int(input("Enter a number: "))
+rev = 0
+temp = num
+while temp > 0:
+    digit = temp % 10
+    rev = rev * 10 + digit
+    temp //= 10
+print("Reversed number:", rev)
+if num == rev:
+    print("Palindrome number")
+else:
+    print("Not a palindrome")
+
+# Example:
+# Enter a number: 121
+# Reversed number: 121
+# Palindrome number
+
+print("\n--------------------------------------------\n")
+
+# ============================================================
+# 21. Find sum of all even and odd digits in a given number
+# ============================================================
+num = int(input("Enter a number: "))
+even_sum = 0
+odd_sum = 0
+while num > 0:
+    digit = num % 10
+    if digit % 2 == 0:
+        even_sum += digit
+    else:
+        odd_sum += digit
+    num //= 10
+print("Sum of even digits:", even_sum)
+print("Sum of odd digits:", odd_sum)
+
+# Example:
+# Enter a number: 12345
+# Sum of even digits: 6
+# Sum of odd digits: 9
+
+print("\n--------------------------------------------\n")
+
+# ============================================================
+# 22. Check whether a given number is Harshad number
+# ============================================================
+num = int(input("Enter a number: "))
+temp = num
+sum_digits = 0
+while temp > 0:
+    sum_digits += temp % 10
+    temp //= 10
+if num % sum_digits == 0:
+    print("Harshad number")
+else:
+    print("Not a Harshad number")
+
+# Example:
+# Enter a number: 18
+# Harshad number
+
+print("\n--------------------------------------------\n")
+
+# ============================================================
+# 23. Display all Harshad numbers between 1 and 100
+# ============================================================
+for num in range(1, 101):
+    temp = num
+    sum_digits = 0
+    while temp > 0:
+        sum_digits += temp % 10
+        temp //= 10
+    if sum_digits != 0 and num % sum_digits == 0:
+        print(num)
+
+# Output: Many numbers including 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12, 18, 20, etc.
+
+print("\n--------------------------------------------\n")
+
+# ============================================================
+# 24. Display multiplication tables from 1 to 10
+# ============================================================
+for i in range(1, 11):
+    print(f"\nTable of {i}:")
+    for j in range(1, 11):
+        print(f"{i} x {j} = {i * j}")
+
+# Example:
+# Table of 1
+# 1 x 1 = 1
+# 1 x 2 = 2
+# ...
+# Table of 10
+# 10 x 10 = 100
+
+print("\n--------------------------------------------\n")
+
+# ============================================================
+# 25. Print prime factors of a given number
+# ============================================================
+num = int(input("Enter a number: "))
+print("Prime factors are:")
+for i in range(2, num + 1):
+    while num % i == 0:
+        print(i)
+        num //= i
+
+# Example:
+# Enter a number: 36
+# Prime factors are: 2 2 3 3
+
+print("\n--------------------------------------------\n")
+
+# ============================================================
+# 26. Find LCM of two numbers using loops
+# ============================================================
+a = int(input("Enter first number: "))
+b = int(input("Enter second number: "))
+max_num = max(a, b)
+while True:
+    if max_num % a == 0 and max_num % b == 0:
+        print("LCM is:", max_num)
+        break
+    max_num += 1
+
+# Example:
+# Enter first number: 4
+# Enter second number: 6
+# LCM is: 12
+
+print("\n--------------------------------------------\n")
+
+# ============================================================
+# 27. Find GCD of two numbers using loops
+# ============================================================
+a = int(input("Enter first number: "))
+b = int(input("Enter second number: "))
+gcd = 1
+for i in range(1, min(a, b) + 1):
+    if a % i == 0 and b % i == 0:
+        gcd = i
+print("GCD is:", gcd)
+
+# Example:
+# Enter first number: 36
+# Enter second number: 60
+# GCD is: 12
+
+print("\n--------------------------------------------\n")
+
+# ============================================================
+# 28. Display the sum of series: 1 + 2 + 3 + ... + N
+# ============================================================
+N = int(input("Enter N: "))
+sum_series = 0
+for i in range(1, N + 1):
+    sum_series += i
+print("Sum =", sum_series)
+
+# Example:
+# Enter N: 5
+# Sum = 15
+
+print("\n--------------------------------------------\n")
+
+# ============================================================
+# 29. Display the sum of series: 1² + 2² + 3² + ... + N²
+# ============================================================
+N = int(input("Enter N: "))
+sum_series = 0
+for i in range(1, N + 1):
+    sum_series += i ** 2
+print("Sum =", sum_series)
+
+# Example:
+# Enter N: 3
+# Sum = 14
+
+print("\n--------------------------------------------\n")
+
+# ============================================================
+# 30. Display the sum of series: 1³ + 2³ + 3³ + ... + N³
+# ============================================================
+N = int(input("Enter N: "))
+sum_series = 0
+for i in range(1, N + 1):
+    sum_series += i ** 3
+print("Sum =", sum_series)
+
+# Example:
+# Enter N: 3
+# Sum = 36
